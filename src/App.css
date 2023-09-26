@@ -1,0 +1,13 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-div {
+  width: 100vw;
+  height: 100vh;
+  background-color: #161539;
+  margin: 0;
+  display:flex;
+}
