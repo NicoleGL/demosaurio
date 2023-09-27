@@ -1,3 +1,9 @@
+Todo el código va en src (todo lo que debe ser privado del proyecto).
+- Assets: imágenes, iconos, etc.
+- Components: componentes de React (una carpeta por componente, con su js y su css).
+- Screens: una carpeta por pantalla, con su js y su css.
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
