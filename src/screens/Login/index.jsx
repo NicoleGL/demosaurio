@@ -1,20 +1,22 @@
 import React from "react";
-import './index.module.css';
+import LoginCSS from './index.module.css';
 
 function LoginPage() {
 
 
     return(
-        <div className="main">
-            <h1>Iniciar sesión</h1>
-            <form>
-                <label for="username">Usuario:</label><br />
-                <input type="user" id="username" name="username" /><br />
-                <label for="password">Contraseña:</label><br />
-                <input type="password" id="password" name="password" /><br />
-                <input type="submit" id="submit" name="password" value="Iniciar sesión" />
-            </form> 
-            <p>¿No tienes cuenta? <a>Regístrate</a></p>
+        <div className={LoginCSS.main}>
+            <div className={LoginCSS.square}>
+                <h1 className={LoginCSS.header}>Iniciar sesión</h1>
+                <form className={LoginCSS["form-box"]}>
+                    <label for="username">Usuario:</label><br />
+                    <input type="user" id="username" name="username" className={LoginCSS["enter-text"]} /><br />
+                    <label for="password">Contraseña:</label><br />
+                    <input type="password" id="password" name="password" className={LoginCSS["enter-text"]}/><br />
+                    <input type="submit" id="submit" name="password" value="Iniciar sesión" className={LoginCSS["submit-button"]} />
+                </form> 
+                <p>¿No tienes cuenta? <a>Regístrate</a></p>
+            </div>
         </div>
     )
 }
