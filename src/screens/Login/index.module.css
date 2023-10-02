@@ -1,0 +1,78 @@
+/* GENERAL */
+
+.side-margin {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* DIVS */
+
+.main-div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.square-box {
+    height: 400px;
+    width: 400px;
+    background-color: var(--bg-purple);
+    border: 1px solid white;
+    border-radius: 30px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.form-box {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* BUTTONS */
+
+.submit-button {
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: var(--button-blue);
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: var(--button-blue-hover);
+}
+
+/* TEXT */
+
+.header {
+    color: white;
+}
+
+label {
+    color: white;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+    border: 0;
+    padding: 0;
+    padding-left: 5px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.enter-text {
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+p {
+    color:white;
+}
