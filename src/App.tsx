@@ -20,9 +20,10 @@ function App() {
   )
 }
 
-send(msg:string) {
-    console.log("intentando enviar mensaje");
-    sendMsg(msg);
+send() {
+    console.log("hello");
+    sendMsg("hello");
 }
 
 export default App
+export default send
