@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import useWebSocket from 'react-use-websocket';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -9,9 +10,15 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </React.StrictMode>,
 )
 
-var socket = new Websocket("ws://localhost:8080/ws");
+var ws = new WebSocket("ws://localhost:8080/ws");
 
-let connect = () => {
+let sendMsg = (msg) => {
+    ws.send(msg);
+};
+
+export default sendMsg;
+
+/*let connect = (socket) => {
   console.log("Conectando");
 
   socket.onopen = () => {
@@ -31,9 +38,10 @@ let connect = () => {
   };
 };
 
-let sendMsg = msg => {
+let sendMsg = (msg, socket) => {
   console.log("sending msg: ", msg);
   socket.send(msg);
 };
 
 export { connect, sendMsg };
+*/

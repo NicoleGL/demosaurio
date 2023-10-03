@@ -6,7 +6,7 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import { connect, sendMsg } from "./main.tsx";
 
 function App() {
-  connect();
+  //connect(socket);
 
   return (
     <Router>
@@ -18,12 +18,12 @@ function App() {
       </div>
     </ Router>
   )
-}
+};
 
-send() {
+/*
+ export function send() {
     console.log("hello");
     sendMsg("hello");
-}
-
+};
+*/
 export default App
-export default send
