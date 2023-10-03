@@ -45,7 +45,10 @@ func setupRoutes() {
 }
 
 func main() {
-    fmt.Println("funciona?")
+    fmt.Println("[INFO] Stating backend services...")
+    fmt.Print("[INFO] Setting up routes... ")
     setupRoutes()
+    fmt.Println("[INFO] Done.")
+    fmt.Println("[FINISHED] Server running on port 8080")
     http.ListenAndServe(":8080", nil)
 }
