@@ -45,6 +45,20 @@
     background-color: var(--button-blue-hover);
 }
 
+.eye-icon {
+    width: 20px;
+    height: 20px;
+
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+
+    position: relative;
+    top: -20px;
+    margin-right: 5px;
+}
+
 /* TEXT */
 
 .header {
