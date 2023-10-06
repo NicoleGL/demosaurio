@@ -6,7 +6,7 @@ function sendMessage(username, password) {
     sendMsg(username.value + ", " + password.value);
 }
 
-function NavButton(username, password) {
+function LoginButton(username, password) {
 
     return (
         <Link to={"/"} className={CSS.button} onClick={() => sendMessage(username,password)}>Iniciar sesión</Link>
@@ -14,4 +14,4 @@ function NavButton(username, password) {
 
 }
 
-export default NavButton;
+export default LoginButton;

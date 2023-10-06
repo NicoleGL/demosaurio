@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CSS from './index.module.css';
 import {send} from '../../App.tsx';
-import NavButton from "../../components/NavButton";
+import LoginButton from "../../components/LoginButton/index.tsx";
 import { Icon } from 'react-icons-kit'
 import {eye } from 'react-icons-kit/entypo/eye';
 import {withLine} from 'react-icons-kit/entypo/withLine';
@@ -37,7 +37,7 @@ function LoginPage() {
                     <input type={type} name="password" value={password} className={CSS["enter-text"]}
                             onChange={(e) => setPassword(e.target.value)} />
                     <Icon icon={icon} className={CSS["eye-icon"]} onClick={showPassword}/>
-                    <NavButton username={user} password={password} />
+                    <LoginButton username={user} password={password} />
                 </form> 
                 <p className={CSS["side-margin"]}>¿No tienes cuenta? <a>Regístrate</a></p>
             </div>
