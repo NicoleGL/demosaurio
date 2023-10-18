@@ -6,6 +6,8 @@ type props = {
     height:string
 }
 
+/* Imagen cuadrada. Creé un componente porque se usará en muchos sitios en la web. 
+Aún no funciona con una foto de verdad. */
 function SquarePic({src, width, height}:props) {
 
     

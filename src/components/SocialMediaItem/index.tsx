@@ -11,8 +11,9 @@ type props = {
     content:string
 }
 
-
+/* Este componente es el icono de una red social + el nombre de usuario. Se usa en ProfilePage  */
 function SocialMediaItem({site, content}:props) {
+    /* Si el usuario no ha puesto una red social, no se muestra nada */
     if(content == '') return;
 
     const icons = {

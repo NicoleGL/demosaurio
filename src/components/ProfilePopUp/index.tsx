@@ -13,8 +13,10 @@ type props = {
 }
 
 
-function ProfilePopUp(props: props) {
-    const { data, isVisible, callback } = props;
+function ProfilePopUp({ data, isVisible, callback }: props) {
+
+    /* Estas variables rellenan los campos con los datos que ya tenía puesto el usuario.
+    Estos datos provienen de ProfilePage. */
     const [username, setUsername] = useState(data.username);
     const [description, setDescription] = useState(data.description);
     const [web, setWeb] = useState(data["social-media"][0].content);
@@ -24,7 +26,8 @@ function ProfilePopUp(props: props) {
     const [github, setGithub] = useState(data["social-media"][4].content);
 
 
-    return (     
+    return (   
+        /* ProfilePage modifica la visibilidad del div  */ 
         <div className={styles.main} style={{ 'display':isVisible }}>
             <h1 className={styles.text}>Editar perfil</h1>
             <form className={styles.grid}>

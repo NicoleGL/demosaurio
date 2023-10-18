@@ -8,9 +8,11 @@ import {ic_edit} from 'react-icons-kit/md/ic_edit'
 
 function ProfilePage() {
 
+    /* Objeto temporal de donde se sacan los datos que mostrar en el perfil.
+    Esto en el futuro se sacará de la base de datos. */
     const profileData = {
         'username': 'brunoburkos',
-        'image-url': null,
+        'image-url': null, //La imagen de momento no es funcional
         'description': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         'social-media': [
             {'site': 'web', 'content': 'siu.com'},
@@ -21,6 +23,7 @@ function ProfilePage() {
         ]
     }
 
+    //Con estas variables se modifica la visibilidad del popup de 'Editar perfil' y el oscurecimiento del fondo.
     const [background, setBackground] = useState('var(--main-bg-color)');
     const [visibility, setVisibility] = useState('none');
 
@@ -34,14 +37,14 @@ function ProfilePage() {
         setVisibility('none');
     }
 
-    const handleCallback = () => {closePopup()}
-
     return(
         <div className={styles.main} style={{ 'background': background }}>
             <div className={styles.left}>
-                <div className={styles["left-container"]}>
+                <div className={styles["left-container"]}>+
+                    {/* Foto de perfil */}
                     <SquarePic src='' width='150px' height='150px' />
                     <div>
+                        {/* Nombre de usuario y botón de editar */}
                         <div className={`${styles.text} ${styles['username-div']}`}>
                             <h1 className={`${styles.text} ${styles.username}`}>{profileData.username}</h1>
                             <button className={styles["edit-button"]} onClick={openPopup}>
@@ -49,7 +52,10 @@ function ProfilePage() {
                             </button>
                         </div>
                         
+                        {/* Descripción */}
                         <p className={styles.wrap}>{profileData.description}</p>
+
+                        {/* Lista de redes sociales. Se itera el array de redes sociales */}
                         <ul className={`${styles.text} ${styles.list}`}>
                             {profileData['social-media'].map(
                                 (item) => <SocialMediaItem site={item.site} content={item.content} />
@@ -60,8 +66,13 @@ function ProfilePage() {
             </div>
             <div className={styles.right}>
                 <h1 className={styles.text}>Mis demos</h1>
+
+                {/* Aquí queda por hacer la colección de demos */}
+
             </div>
-            <ProfilePopUp data={profileData}  isVisible={visibility} callback={handleCallback}/>
+
+            {/* Popup para editar el perfil. */}
+            <ProfilePopUp data={profileData}  isVisible={visibility} callback={closePopup}/>
         </div>
     )
 }
