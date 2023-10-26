@@ -4,6 +4,7 @@ import Login from './screens/Login';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { connect, sendMsg } from "./main.tsx";
+import ProfilePage from './screens/ProfilePage/index.tsx';
 
 function App() {
   //connect(socket);
@@ -14,6 +15,7 @@ function App() {
         <Routes>
             <Route exact path='/' element={<Home />}></Route>
             <Route exact path='/login' element={<Login />}></Route>
+            <Route exact path='/profile' element={<ProfilePage />}></Route>
         </Routes>
       </div>
     </ Router>
