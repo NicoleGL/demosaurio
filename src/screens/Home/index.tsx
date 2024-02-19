@@ -1,13 +1,16 @@
-import React from "react";
+import TopBar from "../../components/TopBar";
+import styles from "./index.module.css"
 
 
 function Home() {
 
 
     return(
-        <>
-            <h1>Soy Home, he llegado</h1>
-        </>
+        <div className={styles.all}>
+            <TopBar state={1} />
+            <div className={styles.main}>
+            </div>
+        </div>
     )
 }
 

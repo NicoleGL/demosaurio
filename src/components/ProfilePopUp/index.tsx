@@ -25,6 +25,16 @@ function ProfilePopUp({ data, isVisible, callback }: props) {
     const [instagram, setInstagram] = useState(data["social-media"][3].content);
     const [github, setGithub] = useState(data["social-media"][4].content);
 
+    const [color, setColor] = useState('white');
+
+    //Si se llena la descripcion, que tiene un limite de 200 caracteres,
+    //se cambia el color del contador a rojo
+    const changeIfFull = (count: number) => {
+        if(count >= 200)
+            setColor('#ff1a1a');
+        else
+            setColor('white');
+    }
 
     return (   
         /* ProfilePage modifica la visibilidad del div  */ 
@@ -34,9 +44,11 @@ function ProfilePopUp({ data, isVisible, callback }: props) {
                 <label className={styles.text} htmlFor="username">Nombre de usuario:</label>
                 <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)}/>
 
-                <label className={styles.text} htmlFor="description">Descripción:</label><br />
+                <label className={styles.text} htmlFor="description">Descripción:</label>
+                <p className={styles.counter} style={{ 'color':color }}>{`${description.length}/200`}</p>
                 <textarea className={styles.description} id="description" maxLength={200} 
-                          value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                          value={description} onChange={(e) => {setDescription(e.target.value); changeIfFull(e.target.value.length)}}>
+                </textarea>
 
                 <label className={styles.text} htmlFor="web">Página web personal:</label>
                 <input type="text" id="web" value={web} onChange={(e) => setWeb(e.target.value)}/>
