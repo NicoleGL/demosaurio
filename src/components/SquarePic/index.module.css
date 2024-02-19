@@ -1,0 +1,6 @@
+.empty {
+    background-color: grey;
+    background: linear-gradient(to bottom right, black, grey);
+    border-style: none;
+    border-radius: 30px;
+}

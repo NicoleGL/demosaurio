@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CSS from './index.module.css';
+import styles from './index.module.css'; //Cambiado porque CSS es palabra reservada
 import {send} from '../../App.tsx';
 import LoginButton from "../../components/LoginButton/index.tsx";
 import { Icon } from 'react-icons-kit'
@@ -28,27 +28,27 @@ function LoginPage() {
     }
 
     return(
-        <div className={CSS["main-div"]}>
-            <div className={CSS["square-box"]}>
+        <div className={styles["main-div"]}>
+            <div className={styles["square-box"]}>
 
-                <h1 className={`${CSS.header} ${CSS["side-margin"]}`}>Iniciar sesión</h1>
+                <h1 className={`${styles.header} ${styles["side-margin"]}`}>Iniciar sesión</h1>
 
-                <form className={`${CSS["form-box"]} ${CSS["side-margin"]}`}>
-                    <label htmlFor="username">Usuario:</label>
-                    <input type="user" id="username" name="username" value={user} className={CSS["enter-text"]}
+                <form className={`${styles["form-box"]} ${styles["side-margin"]}`}>
+                    <label htmlFor="username" className={styles.labels}>Usuario:</label>
+                    <input type="user" id="username" name="username" value={user} className={`${styles["enter-text"]} ${styles.inputs}`}
                             onChange={(e) => setUser(e.target.value)} />
 
-                    <label htmlFor="password">Contraseña:</label>
-                    <input type={type} name="password" value={password} className={CSS["enter-text"]}
+                    <label htmlFor="password" className={styles.labels}>Contraseña:</label>
+                    <input type={type} name="password" value={password} className={`${styles["enter-text"]} ${styles.inputs}`}
                             onChange={(e) => setPassword(e.target.value)} />
                     {/* Icono de ver la contraseña */}
-                    <Icon icon={icon} className={CSS["eye-icon"]} onClick={showPassword}/>
+                    <Icon icon={icon} className={styles["eye-icon"]} onClick={showPassword}/>
 
                     {/* Botón de iniciar sesión */}
                     <LoginButton username={user} password={password} />
                 </form> 
 
-                <p className={CSS["side-margin"]}>¿No tienes cuenta? <a>Regístrate</a></p>
+                <p className={styles["side-margin"]}>¿No tienes cuenta? <a>Regístrate</a></p>
 
             </div>
         </div>
