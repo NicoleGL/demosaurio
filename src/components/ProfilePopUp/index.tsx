@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import { useState } from "react";
 
-type props = {
+type ProfilePopUpProps = {
     'data': {
         'username': string,
         'image-url': any,
@@ -9,11 +9,11 @@ type props = {
         'social-media': {site: string; content: string; }[]
     },
     'isVisible': string,
-    'callback': any
+    'callback': () => void
 }
 
 
-function ProfilePopUp({ data, isVisible, callback }: props) {
+function ProfilePopUp({ data, isVisible, callback }: ProfilePopUpProps) {
 
     /* Estas variables rellenan los campos con los datos que ya tenía puesto el usuario.
     Estos datos provienen de ProfilePage. */

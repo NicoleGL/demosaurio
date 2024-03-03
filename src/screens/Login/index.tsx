@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styles from './index.module.css'; //Cambiado porque CSS es palabra reservada
-import {send} from '../../App.tsx';
 import LoginButton from "../../components/LoginButton/index.tsx";
 import { Icon } from 'react-icons-kit';
 import {eye } from 'react-icons-kit/entypo/eye';

@@ -2,14 +2,19 @@ import { Link } from "react-router-dom";
 import CSS from "./index.module.css";
 import sendMsg from '../../main.tsx';
 
-function sendMessage(username, password) {
-    sendMsg(username.value + ", " + password.value);
+type LoginProps = {
+    username: string,
+    password: string
 }
 
-function LoginButton(username, password) {
+function sendMessage(username:string, password:string) {
+    sendMsg(username + ", " + password);
+}
+
+function LoginButton(props: LoginProps) {
 
     return (
-        <Link to={"/"} className={CSS.button} onClick={() => sendMessage(username,password)}>Iniciar sesión</Link>
+        <Link to={"/"} className={CSS.button} onClick={() => sendMessage(props.username, props.password)}>Iniciar sesión</Link>
     );
 
 }

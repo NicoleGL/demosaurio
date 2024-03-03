@@ -11,7 +11,15 @@ function ProfilePage() {
 
     /* Objeto temporal de donde se sacan los datos que mostrar en el perfil.
     Esto en el futuro se sacará de la base de datos. */
-    const profileData = {
+    const profileData: {
+        'username': string,
+        'image-url': null,
+        'description': string,
+        'social-media': {
+            site:'web'|'facebook'|'twitter'|'instagram'|'github',
+            'content': string
+        }[]
+    } = {
         'username': 'theOwlJulie',
         'image-url': null, //La imagen de momento no es funcional
         'description': 'Soy un búho ouhhhh',

@@ -6,17 +6,23 @@ import {facebook} from 'react-icons-kit/entypo/facebook';
 import {github} from 'react-icons-kit/icomoon/github';
 import {globe} from 'react-icons-kit/entypo/globe';
 
-type props = {
-    site:string,
+type SocialMediaItemProps = {
+    site:'web'|'facebook'|'twitter'|'instagram'|'github',
     content:string
 }
 
 /* Este componente es el icono de una red social + el nombre de usuario. Se usa en ProfilePage  */
-function SocialMediaItem({site, content}:props) {
+function SocialMediaItem({site, content}:SocialMediaItemProps) {
     /* Si el usuario no ha puesto una red social, no se muestra nada */
     if(content == '') return;
 
-    const icons = {
+    const icons: {
+        'web': React.Component,
+        'facebook': React.Component,
+        'twitter': React.Component,
+        'instagram': React.Component,
+        'github': React.Component
+    } = {
         'web': globe,
         'facebook': facebook,
         'twitter': twitter,

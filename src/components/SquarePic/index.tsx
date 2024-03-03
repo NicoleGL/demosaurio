@@ -1,14 +1,14 @@
 import styles from './index.module.css';
 
-type props = {
-    src:string,
+type SquareProps = {
+    src?:string,
     width:string,
     height:string
 }
 
 /* Imagen cuadrada. Creé un componente porque se usará en muchos sitios en la web. 
 Aún no funciona con una foto de verdad. */
-function SquarePic({src, width, height}:props) {
+function SquarePic({width, height}:SquareProps) {
 
     
 
